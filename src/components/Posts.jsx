@@ -1,14 +1,20 @@
-// const Posts = (props) => {
-//   return (
-//     <div className="posts">
-//       <div>
-//         <img src={props.image} alt="" />
-//       </div>
-//       <h4>{props.tag}</h4>
-//       <h3>{props.title}</h3>
-//       <p>{props.ognoo}</p>
-//     </div>
-//   );
-// };
+import Post from "./Post";
 
-// export default Posts;
+const Posts = (props) => {
+  return (
+    <div className="postParent">
+      {props.postsData.map((medee) => {
+        return (
+          <Post
+            image={medee.imgSrc}
+            tag={medee.tag}
+            title={medee.title}
+            ognoo={medee.who}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+export default Posts;
